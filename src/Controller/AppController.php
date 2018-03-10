@@ -18,6 +18,7 @@ use Cake\Controller\Controller;
 use Cake\Event\Event;
 use Cake\Core\Configure;
 use Cake\Routing\Router;
+use App\Lib\Api;
 
 /**
  * Application Controller
@@ -71,9 +72,9 @@ class AppController extends Controller
         parent::beforeFilter($event);
         
         // Start session
-//        if (empty($this->request->session()->id())) {
-//            $this->request->session()->start();
-//        }
+        if (empty($this->request->session()->id())) {
+            $this->request->session()->start();
+        }
         
 //        $this->session = $this->request->session();
         $this->controller = strtolower($this->request->params['controller']);
@@ -100,13 +101,16 @@ class AppController extends Controller
         }
         
         // Set common param
-//        $this->set('session', $this->session);
-//        $this->set('cookie', $this->Cookie);
+        $this->set('session', $this->session);
+        $this->set('cookie', $this->Cookie);
         $this->set('controller', $this->controller);
         $this->set('action', $this->action);
         $this->set('current_url', $this->current_url);
         $this->set('BASE_URL', $this->BASE_URL);
         $this->set('isMobile', $this->isMobile());
+        
+        // Set common data
+        $this->set('cates', $this->getCates());
         
         // Set default layout
         $this->setLayout();
@@ -127,5 +131,15 @@ class AppController extends Controller
     
     public function isMobile() {
         return $this->RequestHandler->isMobile();
+    }
+    
+    // Get list cates
+    public function getCates() {
+        $cates = array();
+        $cates = Api::call(Configure::read('API.url_cates_all'), array());
+        echo '<pre>';
+        print_r($cates);
+        die();
+        return $cates;
     }
 }

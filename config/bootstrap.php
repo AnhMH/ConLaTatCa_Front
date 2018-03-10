@@ -217,3 +217,21 @@ if (Configure::read('debug')) {
 }
 
 define('FILE_VERSION', time());
+
+/*
+ * Custom
+ */
+include_once ('apiurl.php');
+
+if ($env == 'production') {
+    define('VERSION_DATE', date('Ymd'));
+    include_once ('production/bootstrap.php');
+} else {
+    define('VERSION_DATE', date('YmdHis'));
+    include_once ('development/bootstrap.php');
+}
+
+define('DEFAULT_SITE_TITLE', 'Con Là Tất Cả');
+if (!defined('USE_SUB_DIRECTORY')) {
+    define('USE_SUB_DIRECTORY', '');
+}
