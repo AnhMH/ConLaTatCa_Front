@@ -136,10 +136,9 @@ class AppController extends Controller
     // Get list cates
     public function getCates() {
         $cates = array();
-        $cates = Api::call(Configure::read('API.url_cates_all'), array());
-        echo '<pre>';
-        print_r($cates);
-        die();
+        $cates = Api::call(Configure::read('API.url_cates_all'), array(
+            'get_sub_cates' => 1
+        ));
         return $cates;
     }
 }
