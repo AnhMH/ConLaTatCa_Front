@@ -8,29 +8,38 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="herald-fa-list">
-                                        <?php for($i = 1; $i < 6; $i++): ?>
-                                        <article class="herald-fa-item herald-cat-2">
-                                            <header class="entry-header">
-                                                <span class="meta-category"><a href="https://demo.mekshq.com/herald/?cat=2" class="herald-cat-2">Travel</a></span>
-                                                <h2 class="entry-title h6"><a href="https://demo.mekshq.com/herald/?p=157"><span class="herald-format-icon"><i class="fa fa-camera"></i></span>The simplest way to make the best of your vacation</a></h2>				      	
-                                                <div class="entry-meta">
-                                                    <div class="meta-item herald-date">
-                                                        <span class="updated">1 week ago</span>
+                                        <?php if (!empty($data['sliders'])): ?>
+                                        <?php foreach ($data['sliders'] as $slide): ?>
+                                            <article class="herald-fa-item herald-cat-<?php echo $slide['cate_id']; ?>">
+                                                <header class="entry-header">
+                                                    <span class="meta-category">
+                                                        <a href="<?php echo $BASE_URL; ?>/cates/<?php echo $slide['cate_id']; ?>" class="herald-cat-<?php echo $slide['cate_id']; ?>"><?php echo $slide['cate_name']; ?></a>
+                                                    </span>
+                                                    <h2 class="entry-title h6">
+                                                        <a href="<?php echo $BASE_URL; ?>/articles/<?php echo $slide['id']; ?>">
+                                                            <!--<span class="herald-format-icon"><i class="fa fa-camera"></i></span>-->
+                                                            <?php echo $slide['name']; ?>
+                                                        </a>
+                                                    </h2>				      	
+                                                    <div class="entry-meta">
+                                                        <div class="meta-item herald-date">
+                                                            <span class="updated"><?php echo date('Y-m-d', $slide['created']); ?></span>
+                                                        </div>
+<!--                                                        <div class="meta-item herald-comments">
+                                                            <a href="https://demo.mekshq.com/herald/?p=157#comments">6 Comments</a>
+                                                        </div>-->
                                                     </div>
-                                                    <div class="meta-item herald-comments">
-                                                        <a href="https://demo.mekshq.com/herald/?p=157#comments">6 Comments</a>
+                                                    <div class="entry-content">
+                                                        <p><?php echo $slide['description']; ?></p>
                                                     </div>
-                                                </div>
-                                                <div class="entry-content">
-                                                    <p>Umami craft beer hella, put a bird on it YOLO roof party Echo Park single...</p>
-                                                </div>
-                                                <a href="#" class="fa-post-bg"></a>
-                                            </header>
-                                            <a class="fa-post-thumbnail" href="https://demo.mekshq.com/herald/?p=157" title="The simplest way to make the best of your vacation">
-                                                <img width="550" height="520" src="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald070-550x520.jpg" class="attachment-herald-lay-fa1-full size-herald-lay-fa1-full wp-post-image" alt="" />
-                                            </a>
-                                        </article>
-                                        <?php endfor; ?>
+                                                    <a href="#" class="fa-post-bg"></a>
+                                                </header>
+                                                <a class="fa-post-thumbnail" href="<?php echo $BASE_URL; ?>/articles/<?php echo $slide['id']; ?>" title="<?php echo $slide['name']; ?>">
+                                                    <img width="550" height="520" src="<?php echo $slide['image']; ?>" class="attachment-herald-lay-fa1-full size-herald-lay-fa1-full wp-post-image" alt="" />
+                                                </a>
+                                            </article>
+                                        <?php endforeach; ?>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
@@ -395,6 +404,7 @@
                             </div>
                         </div>
                         <div class="row herald-posts row-eq-height herald-slider">
+                            <?php for ($i = 0; $i <= 4; $i++): ?>
                             <article class="herald-lay-i product type-product status-publish has-post-thumbnail product_cat-music product_cat-singles first instock sale shipping-taxable purchasable product-type-simple">
                                 <div class="herald-post-thumbnail">
                                     <a href="https://demo.mekshq.com/herald/?product=woo-single-2" title="Woo Single #2">
@@ -411,6 +421,7 @@
                                     </div>
                                 </div>
                             </article>
+                            <?php endfor; ?>
                         </div>
                     </div>
                 </div>
