@@ -4,6 +4,9 @@
             <div class="herald-post-thumbnail herald-format-icon-middle">
                 <a href="<?php echo $BASE_URL;?>/articles/<?php echo $id;?>" title="<?php echo $name;?>">
                     <img width="300" height="200" src="<?php echo $image;?>" class="attachment-herald-lay-b1 size-herald-lay-b1 wp-post-image" alt="" sizes="(max-width: 300px) 100vw, 300px" />									
+                    <?php if (!empty($type)): ?>
+                    <span class="herald-format-icon"><i class="fa <?php echo $type == 1 ? 'fa-camera' : 'fa-play';?>"></i></span>
+                    <?php endif; ?>
                 </a>
             </div>
         </div>
