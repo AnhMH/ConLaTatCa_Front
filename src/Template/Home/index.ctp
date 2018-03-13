@@ -10,34 +10,7 @@
                                     <div class="herald-fa-list">
                                         <?php if (!empty($data['sliders'])): ?>
                                         <?php foreach ($data['sliders'] as $slide): ?>
-                                            <article class="herald-fa-item herald-cat-<?php echo $slide['cate_id']; ?>">
-                                                <header class="entry-header">
-                                                    <span class="meta-category">
-                                                        <a href="<?php echo $BASE_URL; ?>/cates/<?php echo $slide['cate_id']; ?>" class="herald-cat-<?php echo $slide['cate_id']; ?>"><?php echo $slide['cate_name']; ?></a>
-                                                    </span>
-                                                    <h2 class="entry-title h6">
-                                                        <a href="<?php echo $BASE_URL; ?>/articles/<?php echo $slide['id']; ?>">
-                                                            <!--<span class="herald-format-icon"><i class="fa fa-camera"></i></span>-->
-                                                            <?php echo $slide['name']; ?>
-                                                        </a>
-                                                    </h2>				      	
-                                                    <div class="entry-meta">
-                                                        <div class="meta-item herald-date">
-                                                            <span class="updated"><?php echo date('Y-m-d', $slide['created']); ?></span>
-                                                        </div>
-<!--                                                        <div class="meta-item herald-comments">
-                                                            <a href="https://demo.mekshq.com/herald/?p=157#comments">6 Comments</a>
-                                                        </div>-->
-                                                    </div>
-                                                    <div class="entry-content">
-                                                        <p><?php echo $slide['description']; ?></p>
-                                                    </div>
-                                                    <a href="#" class="fa-post-bg"></a>
-                                                </header>
-                                                <a class="fa-post-thumbnail" href="<?php echo $BASE_URL; ?>/articles/<?php echo $slide['id']; ?>" title="<?php echo $slide['name']; ?>">
-                                                    <img width="550" height="520" src="<?php echo $slide['image']; ?>" class="attachment-herald-lay-fa1-full size-herald-lay-fa1-full wp-post-image" alt="" />
-                                                </a>
-                                            </article>
+                                            <?php echo $this->element('Post/slider', $slide); ?>
                                         <?php endforeach; ?>
                                         <?php endif; ?>
                                     </div>
@@ -53,6 +26,7 @@
         <div class="row">
             <div class="herald-main-content col-lg-9 col-md-9 col-mod-main">
                 <div class="row">
+                    <?php if (!empty($data['breaking_news'])): ?>
                     <div class="herald-module col-lg-12 col-md-12 col-sm-12" id="herald-module-1-0" data-col="12">
                         <div class="herald-mod-wrap">
                             <div class="herald-mod-head ">
@@ -62,36 +36,13 @@
                             </div>
                         </div>			
                         <div class="row herald-posts row-eq-height ">
-                            <?php for($i = 1; $i < 3; $i++): ?>
-                            <article class="herald-lay-c post type-post status-publish format-standard has-post-thumbnail hentry category-food-and">
-                                <div class="herald-post-thumbnail herald-format-icon-middle">
-                                    <a href="https://demo.mekshq.com/herald/?p=191" title="Pasta is the secret ingredient for a healthy lifestyle">
-                                        <img width="470" height="264" src="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald119-470x264.jpg" class="attachment-herald-lay-b size-herald-lay-b wp-post-image" alt="" srcset="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald119-470x264.jpg 470w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald119-990x556.jpg 990w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald119-1320x742.jpg 1320w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald119-640x360.jpg 640w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald119-215x120.jpg 215w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald119-300x168.jpg 300w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald119-414x232.jpg 414w" sizes="(max-width: 470px) 100vw, 470px" />							
-                                    </a>
-                                </div>
-                                <div class="entry-header">
-                                    <span class="meta-category"><a href="https://demo.mekshq.com/herald/?cat=4" class="herald-cat-4">Food &amp; Drinks</a></span>
-                                    <h2 class="entry-title h3"><a href="https://demo.mekshq.com/herald/?p=191">Pasta is the secret ingredient for a healthy lifestyle</a></h2>
-                                    <div class="entry-meta">
-                                        <div class="meta-item herald-date">
-                                            <span class="updated">1 week ago</span>
-                                        </div>
-                                        <div class="meta-item herald-author">
-                                            <div class="coauthors couauthors-icon">
-                                                <span class="vcard author"><span class="fn"><a href="https://demo.mekshq.com/herald?author_name=meks1">Patrick Callahan</a></span></span>
-                                                <span class="vcard author"><span class="fn"><a href="https://demo.mekshq.com/herald?author_name=meks2">Lisa Scholfield</a></span></span>
-                                                <span class="vcard author"><span class="fn"><a href="https://demo.mekshq.com/herald?author_name=meks3">John Bergstein</a></span></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="entry-content">
-                                    <p>This is an example of a post with multiple authors to showcase full support with Co Authors Plus WordPress Plugin. Master cleanse mumblecore...</p>
-                                </div>
-                            </article>
-                            <?php endfor; ?>
+                            <?php foreach ($data['breaking_news'] as $p): ?>
+                            <?php echo $this->element('Post/breaking_new', $p); ?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
+                    <?php endif; ?>
+                    
                     <div class="herald-module col-lg-12 col-md-12 col-sm-12" id="herald-module-1-1" data-col="12">
                         <div class="herald-mod-wrap">
                             <div class="herald-mod-head herald-cat-6">
@@ -342,92 +293,6 @@
             </div>
         </div>
     </div>
-    <div class="herald-section container herald-no-sid " id="herald-section-2">
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <div class="row">
-                    <div class="herald-module col-lg-12 col-md-12 col-sm-12" id="herald-module-2-0" data-col="12">
-                        <div class="herald-mod-wrap">
-                            <div class="herald-mod-head ">
-                                <div class="herald-mod-title">
-                                    <h2 class="h6 herald-mod-h herald-color">Popular This Week</h2>
-                                </div>
-                            </div>
-                        </div>			
-                        <div class="row herald-posts row-eq-height ">
-                            <article class="herald-lay-i post-197 post type-post status-publish format-standard has-post-thumbnail hentry">
-                                <div class="herald-post-thumbnail herald-format-icon-small">
-                                    <a href="https://demo.mekshq.com/herald/?p=197" title="Learn to play golf by practicing 15 minutes a day">
-                                        <img width="300" height="168" src="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-300x168.jpg" class="attachment-herald-lay-i-full size-herald-lay-i-full wp-post-image" alt="" srcset="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-300x168.jpg 300w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-990x556.jpg 990w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-1320x742.jpg 1320w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-470x264.jpg 470w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-640x360.jpg 640w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-215x120.jpg 215w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-414x232.jpg 414w" sizes="(max-width: 300px) 100vw, 300px" />							
-                                    </a>
-                                </div>
-                                <div class="entry-header">
-                                    <span class="meta-category meta-small">
-                                        <a href="https://demo.mekshq.com/herald/?cat=5" class="herald-cat-5">Sports</a>
-                                    </span>
-                                    <h2 class="entry-title h6">
-                                        <a href="https://demo.mekshq.com/herald/?p=197">Learn to play golf by practicing 15 minutes a day</a>
-                                    </h2>
-                                    <div class="entry-meta meta-small">
-                                        <div class="meta-item herald-date">
-                                            <span class="updated">1 week ago</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="herald-lay-j post-201 post type-post status-publish format-standard has-post-thumbnail hentry">
-                                <div class="entry-header">
-                                    <span class="meta-category meta-small">
-                                        <a href="https://demo.mekshq.com/herald/?cat=7" class="herald-cat-7">Technology</a>
-                                    </span>
-                                    <h2 class="entry-title h7">
-                                        <a href="https://demo.mekshq.com/herald/?p=201">Tablets are great for early morning meetings</a>
-                                    </h2>
-                                    <div class="entry-meta meta-small">
-                                        <div class="meta-item herald-date">
-                                            <span class="updated">1 week ago</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                    <div class="herald-module col-lg-12 col-md-12 col-sm-12" id="herald-module-2-1" data-col="12">
-                        <div class="herald-mod-wrap">
-                            <div class="herald-mod-head ">
-                                <div class="herald-mod-title">
-                                    <h2 class="h6 herald-mod-h herald-color">Selected Products</h2>
-                                </div>
-                                <div class="herald-mod-actions">
-                                    <div class="herald-slider-controls" data-col="3" data-autoplay="0"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row herald-posts row-eq-height herald-slider">
-                            <?php for ($i = 0; $i <= 4; $i++): ?>
-                            <article class="herald-lay-i product type-product status-publish has-post-thumbnail product_cat-music product_cat-singles first instock sale shipping-taxable purchasable product-type-simple">
-                                <div class="herald-post-thumbnail">
-                                    <a href="https://demo.mekshq.com/herald/?product=woo-single-2" title="Woo Single #2">
-                                        <img width="300" height="300" src="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2013/06/cd_6_angle-300x300.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="" srcset="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2013/06/cd_6_angle-300x300.jpg 300w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2013/06/cd_6_angle-150x150.jpg 150w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2013/06/cd_6_angle-768x768.jpg 768w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2013/06/cd_6_angle-65x65.jpg 65w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2013/06/cd_6_angle-180x180.jpg 180w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2013/06/cd_6_angle-600x600.jpg 600w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2013/06/cd_6_angle-990x990.jpg 990w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2013/06/cd_6_angle-800x800.jpg 800w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2013/06/cd_6_angle.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" />						
-                                    </a>
-                                </div>
-                                <div class="entry-header">
-                                    <span class="meta-category meta-small"><a href="https://demo.mekshq.com/herald/?product_cat=music" rel="tag">Music</a> <span>&bull;</span> <a href="https://demo.mekshq.com/herald/?product_cat=singles" rel="tag">Singles</a></span>
-                                    <h2 class="entry-title h5">
-                                        <a href="https://demo.mekshq.com/herald/?product=woo-single-2">Woo Single #2</a>
-                                    </h2>
-                                    <div class="entry-meta">
-                                        <span class="price"><del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>3.00</span></del> <ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>2.00</span></ins></span>
-                                    </div>
-                                </div>
-                            </article>
-                            <?php endfor; ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="herald-section container " id="herald-section-3">
         <div class="row">
             <div class="herald-main-content col-lg-9 col-md-9 col-mod-main">
@@ -441,59 +306,14 @@
                             </div>
                         </div>			
                         <div class="row herald-posts row-eq-height ">
-                            <article class="herald-lay-a post-197 post type-post status-publish format-standard has-post-thumbnail hentry category-sports">
-                                <div class="herald-ovrld">
-                                    <div class="herald-post-thumbnail">
-                                        <a href="https://demo.mekshq.com/herald/?p=197" title="Learn to play golf by practicing 15 minutes a day"><img width="990" height="556" src="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-990x556.jpg" class="attachment-herald-lay-a size-herald-lay-a wp-post-image" alt="" srcset="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-990x556.jpg 990w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-1320x742.jpg 1320w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-470x264.jpg 470w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-640x360.jpg 640w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-215x120.jpg 215w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-300x168.jpg 300w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald081-414x232.jpg 414w" sizes="(max-width: 990px) 100vw, 990px" /></a>
-                                    </div>
-                                    <div class="entry-header herald-pf herald-clear-blur">
-                                        <span class="meta-category"><a href="https://demo.mekshq.com/herald/?cat=5" class="herald-cat-5">Sports</a></span>
-                                        <h2 class="entry-title h2">
-                                            <a href="https://demo.mekshq.com/herald/?p=197">Learn to play golf by practicing 15 minutes a day</a>
-                                        </h2>		
-                                        <div class="entry-meta">
-                                            <div class="meta-item herald-date">
-                                                <span class="updated">1 week ago</span>
-                                            </div>
-                                            <div class="meta-item herald-comments">
-                                                <a href="https://demo.mekshq.com/herald/?p=197#comments">1 Comment</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="herald-lay-b post type-post status-publish format-standard has-post-thumbnail hentry category-food-and">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-4">
-                                        <div class="herald-post-thumbnail herald-format-icon-middle">
-                                            <a href="https://demo.mekshq.com/herald/?p=174" title="This is how coffee can help you predict the future">
-                                                <img width="300" height="200" src="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/05/herald034-e1447696639921-300x200.jpg" class="attachment-herald-lay-b1 size-herald-lay-b1 wp-post-image" alt="" srcset="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/05/herald034-e1447696639921-300x200.jpg 300w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/05/herald034-e1447696639921-414x276.jpg 414w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/05/herald034-e1447696639921-470x313.jpg 470w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/05/herald034-e1447696639921-640x426.jpg 640w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/05/herald034-e1447696639921-130x86.jpg 130w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/05/herald034-e1447696639921-187x124.jpg 187w" sizes="(max-width: 300px) 100vw, 300px" />									
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-8 col-md-8 col-sm-8">
-                                        <div class="entry-header">
-                                            <span class="meta-category"><a href="https://demo.mekshq.com/herald/?cat=4" class="herald-cat-4">Food &amp; Drinks</a></span>
-                                            <h2 class="entry-title h3">
-                                                <a href="https://demo.mekshq.com/herald/?p=174">This is how coffee can help you predict the future</a>
-                                            </h2>
-                                            <div class="entry-meta">
-                                                <div class="meta-item herald-date">
-                                                    <span class="updated">1 week ago</span>
-                                                </div>
-                                                <div class="meta-item herald-comments">
-                                                    <a href="https://demo.mekshq.com/herald/?p=174#respond">Add Comment</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Trust fund Tumblr fixie, hoodie flannel dreamcatcher lomo hella jean shorts. Chambray Carles aesthetic, you probably haven't heard of them wolf umami gastropub...</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
+                            <?php foreach ($data['latest_posts'] as $k => $p): ?>
+                            <?php if ($k == 0): ?>
+                                <?php echo $this->element('Post/lastest_post1', $p); ?>
+                            <?php else: ?>
+                                <?php echo $this->element('Post/lastest_post', $p); ?>
+                            <?php endif; ?>
+                            <?php endforeach; ?>
                         </div>
-
                         <nav class="herald-pagination herald-load-more">
                             <a href="https://demo.mekshq.com/herald/?paged=2" >Load More</a>		
                             <div class="herald-loader">
