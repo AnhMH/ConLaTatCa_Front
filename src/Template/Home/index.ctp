@@ -84,13 +84,7 @@
                         <?php endfor; ?>
                     </div>
                 </div>
-                <div class="herald-module col-lg-12 col-md-12 col-sm-12" id="herald-module-1-2">
-                    <div class="herald-txt-module">
-                        <a href="http://themeforest.net/item/herald-news-portal-magazine-wordpress-theme/13800118?ref=meks&license=regular&open_purchase_for_item_id=13800118&purchasable=source">
-                            <img class="aligncenter" src="https://mekshq.com/static/herald/banner728x90_dark.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
+                <?php echo $this->element('Banner/728x90'); ?>
                 <div class="herald-module col-lg-4 col-md-4 col-sm-4" id="herald-module-1-3" data-col="4">
                     <div class="herald-mod-wrap">
                         <div class="herald-mod-head herald-cat-2">
@@ -279,17 +273,7 @@
                     </article>
                 </div>
             </div>
-            <div class="herald-sticky">
-                <div id="mks_ads_widget-12" class="widget mks_ads_widget">
-                    <ul class="mks_adswidget_ul large">
-                        <li data-showind="0">
-                            <a href="http://themeforest.net/item/herald-news-portal-magazine-wordpress-theme/13800118?ref=meks&#038;license=regular&#038;open_purchase_for_item_id=13800118&#038;purchasable=source" target="_blank" >
-                                <img src="<?php echo $BASE_URL; ?>/img/banner300x250_white.jpg" alt="banner300x250_white.jpg" style="width:300px; height:250px;" width="300"  height="250"/>
-                            </a>
-                        </li>
-                    </ul>
-                </div>			
-            </div>
+            <?php echo $this->element('Banner/300x250'); ?>
         </div>
     </div>
 </div>
@@ -328,49 +312,8 @@
             </div>
         </div>
         <div class="herald-sidebar col-lg-3 col-md-3 herald-sidebar-right">
-            <div id="categories-3" class="widget widget_categories">
-                <h4 class="widget-title h6"><span>All Topics</span></h4>		
-                <ul>
-                    <li class="cat-item cat-item-48">
-                        <a href="https://demo.mekshq.com/herald/?cat=48" ><span class="category-text">Celebrities</span><span class="count">5</span></a>
-                    </li>
-                    <li class="cat-item cat-item-6">
-                        <a href="https://demo.mekshq.com/herald/?cat=6" ><span class="category-text">Entertainment</span><span class="count">7</span></a>
-                    </li>
-                    <li class="cat-item cat-item-3">
-                        <a href="https://demo.mekshq.com/herald/?cat=3" ><span class="category-text">Fashion</span><span class="count">7</span></a>
-                    </li>
-                    <li class="cat-item cat-item-4">
-                        <a href="https://demo.mekshq.com/herald/?cat=4" ><span class="category-text">Food &amp; Drinks</span><span class="count">10</span></a>
-                    </li>
-                    <li class="cat-item cat-item-43">
-                        <a href="https://demo.mekshq.com/herald/?cat=43" ><span class="category-text">Movies</span><span class="count">5</span></a>
-                    </li>
-                    <li class="cat-item cat-item-42">
-                        <a href="https://demo.mekshq.com/herald/?cat=42" ><span class="category-text">Music</span><span class="count">5</span></a>
-                    </li>
-                    <li class="cat-item cat-item-5">
-                        <a href="https://demo.mekshq.com/herald/?cat=5" ><span class="category-text">Sports</span><span class="count">9</span></a>
-                    </li>
-                    <li class="cat-item cat-item-7">
-                        <a href="https://demo.mekshq.com/herald/?cat=7" ><span class="category-text">Technology</span><span class="count">7</span></a>
-                    </li>
-                    <li class="cat-item cat-item-2">
-                        <a href="https://demo.mekshq.com/herald/?cat=2" ><span class="category-text">Travel</span><span class="count">7</span></a>
-                    </li>
-                </ul>
-            </div>		
-            <div class="herald-sticky">
-                <div id="mks_ads_widget-10" class="widget mks_ads_widget">
-                    <ul class="mks_adswidget_ul custom">
-                        <li data-showind="0">
-                            <a href="conlatatca.info" target="_blank" >
-                                <img src="<?php echo $BASE_URL; ?>/img/banner300x316_white.jpg" alt="banner300x316_white.jpg" style="width:300px; height:316px;" width="300"  height="316"/>
-                            </a>
-                        </li>
-                    </ul>
-                </div>			
-            </div>
+            <?php echo $this->element('Layout/widget_categories'); ?>
+            <?php echo $this->element('Banner/300x316'); ?>
         </div>
     </div>
 </div>

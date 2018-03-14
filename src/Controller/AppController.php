@@ -122,10 +122,8 @@ class AppController extends Controller
     public function setLayout() {
         if ($this->controller == 'ajax') {
             $this->viewBuilder()->layout('ajax');
-        } else if (in_array($this->controller, array('home'))) {
-            $this->viewBuilder()->layout('conlatatca');
         } else {
-            $this->viewBuilder()->layout('default');
+            $this->viewBuilder()->layout('conlatatca');
         }
     }
     
