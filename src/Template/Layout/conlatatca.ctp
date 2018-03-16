@@ -8,6 +8,7 @@
         <link rel='dns-prefetch' href='//fonts.googleapis.com' />
         <link rel='dns-prefetch' href='//s.w.org' />
         <link rel="alternate" type="application/rss+xml" title="" href="" />
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
         <link rel='stylesheet'  href='<?php echo $BASE_URL; ?>/css/style.css?<?php echo FILE_VERSION; ?>' type='text/css' media='all' />
         <link rel='stylesheet'  href='<?php echo $BASE_URL; ?>/css/custom.css?<?php echo FILE_VERSION; ?>' type='text/css' media='all' />
         <script type='text/javascript'>
