@@ -296,7 +296,7 @@
                         </div>
                     </div>			
                     <div class="row herald-posts row-eq-height ">
-                        <?php foreach ($data['latest_posts'] as $k => $p): ?>
+                        <?php foreach ($lastest_post as $k => $p): ?>
                             <?php if ($k == 0): ?>
                                 <?php echo $this->element('Post/lastest_post1', $p); ?>
                             <?php else: ?>

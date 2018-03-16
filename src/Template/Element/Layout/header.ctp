@@ -54,8 +54,8 @@
         </div>
     </div>
     
-    <?php if (!empty($data['latest_posts'])): ?>
-    <?php echo $this->element('Layout/header_trending', $data); ?>
+    <?php if (!empty($lastest_post)): ?>
+    <?php echo $this->element('Layout/header_trending', $lastest_post); ?>
     <?php endif; ?>
 
 </header>
