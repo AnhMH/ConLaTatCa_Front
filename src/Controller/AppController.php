@@ -109,11 +109,12 @@ class AppController extends Controller
         $this->set('BASE_URL', $this->BASE_URL);
         $this->set('isMobile', $this->isMobile());
         
+        // Set common data
+        $settings = $this->getSettings();
+        $this->set('cates', $settings['cates']);
         $this->set('webTitle', 'Con Là Tất Cả');
         $this->set('webDescription', 'Con Là Tất Cả');
         $this->set('webKeyword', 'Con Là Tất Cả');
-        // Set common data
-        $this->set('cates', $this->getCates());
         
         // Set default layout
         $this->setLayout();
@@ -135,11 +136,9 @@ class AppController extends Controller
     }
     
     // Get list cates
-    public function getCates() {
-        $cates = array();
-        $cates = Api::call(Configure::read('API.url_cates_all'), array(
-            'get_sub_cates' => 1
-        ));
-        return $cates;
+    public function getSettings() {
+        $data = array();
+        $data = Api::call(Configure::read('API.url_settings_general'), array());
+        return $data;
     }
 }

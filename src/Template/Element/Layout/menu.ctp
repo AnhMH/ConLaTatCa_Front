@@ -3,6 +3,7 @@
 </li>
 <?php if (!empty($cates)): ?>
 <?php foreach ($cates as $cate): ?>
+<?php if (empty($cate['root_id'])): ?>
 <li class="menu-item <?php echo !empty($cate['sub_cates']) ? 'herald-mega-menu' : '';?>">
     <a href="<?php echo $BASE_URL;?>/cates/<?php echo $cate['id'];?>"><?php echo $cate['name'];?></a>
     <?php if (!empty($cate['sub_cates'])): ?>
@@ -42,6 +43,7 @@
     </ul>
     <?php endif; ?>
 </li>
+<?php endif; ?>
 <?php endforeach; ?>
 <?php endif; ?>
 <li class="menu-item menu-item-type-post_type menu-item-object-page">
