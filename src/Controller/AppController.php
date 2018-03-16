@@ -109,6 +109,9 @@ class AppController extends Controller
         $this->set('BASE_URL', $this->BASE_URL);
         $this->set('isMobile', $this->isMobile());
         
+        $this->set('webTitle', 'Con Là Tất Cả');
+        $this->set('webDescription', 'Con Là Tất Cả');
+        $this->set('webKeyword', 'Con Là Tất Cả');
         // Set common data
         $this->set('cates', $this->getCates());
         

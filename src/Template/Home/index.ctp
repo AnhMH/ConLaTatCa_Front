@@ -47,7 +47,13 @@
                     <div class="herald-mod-wrap">
                         <div class="herald-mod-head herald-cat-6">
                             <div class="herald-mod-title">
-                                <h2 class="h6 herald-mod-h herald-color">Entertainment<i class="fa fa-angle-down herald-sub-cat-icon" aria-hidden="true"></i><div class="herald-mod-subnav-mobile"><a href="https://demo.mekshq.com/herald/?cat=48">Celebrities</a><a href="https://demo.mekshq.com/herald/?cat=43">Movies</a><a href="https://demo.mekshq.com/herald/?cat=42">Music</a></div></h2>
+                                <h2 class="h6 herald-mod-h herald-color">Entertainment<i class="fa fa-angle-down herald-sub-cat-icon" aria-hidden="true"></i>
+                                    <div class="herald-mod-subnav-mobile">
+                                        <a href="https://demo.mekshq.com/herald/?cat=48">Celebrities</a>
+                                        <a href="https://demo.mekshq.com/herald/?cat=43">Movies</a>
+                                        <a href="https://demo.mekshq.com/herald/?cat=42">Music</a>
+                                    </div>
+                                </h2>
                             </div>
                             <div class="herald-mod-subnav">
                                 <a href="https://demo.mekshq.com/herald/?cat=48">Celebrities</a>

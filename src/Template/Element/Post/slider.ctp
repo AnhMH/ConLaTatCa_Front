@@ -13,9 +13,6 @@
             <div class="meta-item herald-date">
                 <span class="updated"><?php echo date('Y-m-d', $created); ?></span>
             </div>
-            <!--                                                        <div class="meta-item herald-comments">
-                                                                        <a href="https://demo.mekshq.com/herald/?p=157#comments">6 Comments</a>
-                                                                    </div>-->
         </div>
         <div class="entry-content">
             <p><?php echo $description; ?></p>
