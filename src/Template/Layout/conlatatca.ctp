@@ -43,6 +43,7 @@
     </head>
 
     <body class="herald-boxed">
+        <?= $this->element('Layout/header_facebook'); ?>
         <?= $this->element('Layout/header'); ?>
 
         <div id="content" class="herald-site-content herald-slide">

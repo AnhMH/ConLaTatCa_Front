@@ -26,7 +26,7 @@
     <div class="row">
         <div class="herald-main-content col-lg-9 col-md-9 col-mod-main">
             <div class="row">
-                <?php if (!empty($data['breaking_news'])): ?>
+                <?php if (!empty($breaking_news)): ?>
                     <div class="herald-module col-lg-12 col-md-12 col-sm-12" id="herald-module-1-0" data-col="12">
                         <div class="herald-mod-wrap">
                             <div class="herald-mod-head ">
@@ -36,7 +36,7 @@
                             </div>
                         </div>			
                         <div class="row herald-posts row-eq-height ">
-                            <?php foreach ($data['breaking_news'] as $p): ?>
+                            <?php foreach ($breaking_news as $p): ?>
                                 <?php echo $this->element('Post/breaking_new', $p); ?>
                             <?php endforeach; ?>
                         </div>

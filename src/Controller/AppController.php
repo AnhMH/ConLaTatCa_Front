@@ -111,6 +111,7 @@ class AppController extends Controller
         
         // Set common data
         $settings = $this->getSettings();
+        $this->set('breaking_news', $settings['breaking_news']);
         $this->set('cates', $settings['cates']);
         $this->set('latest_post', $settings['latest_post']);
         $this->set('settings', $settings['settings']);
