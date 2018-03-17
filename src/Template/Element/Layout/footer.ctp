@@ -79,10 +79,7 @@
                 </div>
                 <div class="hel-r herald-go-hor">
                     <ul id="menu-herald-social-2" class="herald-soc-nav">
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1037"><a href="https://www.facebook.com/mekshq"><span class="herald-social-name">Facebook</span></a></li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1038"><a href="https://twitter.com/mekshq"><span class="herald-social-name">Twitter</span></a></li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1039"><a href="https://plus.google.com/u/0/+meksHQgplus/posts"><span class="herald-social-name">Google+</span></a></li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1040"><a href="http://instagram.com/"><span class="herald-social-name">Instagram</span></a></li>
+                        <?php echo $this->element('Layout/social'); ?>
                     </ul>							
                 </div>
             </div>

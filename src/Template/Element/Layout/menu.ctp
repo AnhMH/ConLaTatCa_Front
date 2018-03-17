@@ -46,6 +46,6 @@
 <?php endif; ?>
 <?php endforeach; ?>
 <?php endif; ?>
-<li class="menu-item menu-item-type-post_type menu-item-object-page">
+<!--<li class="menu-item menu-item-type-post_type menu-item-object-page">
     <a href="<?php echo $BASE_URL;?>">Liên hệ</a>
-</li>
+</li>-->
