@@ -47,39 +47,58 @@
                     <div class="herald-mod-wrap">
                         <div class="herald-mod-head herald-cat-6">
                             <div class="herald-mod-title">
-                                <h2 class="h6 herald-mod-h herald-color">Entertainment<i class="fa fa-angle-down herald-sub-cat-icon" aria-hidden="true"></i>
+                                <?php 
+                                $topCate = array();
+                                $topCateIds = array();
+                                foreach ($cates as $tc) {
+                                    if ($tc['id'] == $settings['homepage_top_cate']) {
+                                        $topCate = $tc;
+                                        $topCateIds[] = $tc['id'];
+                                        break;
+                                    }
+                                }
+                                ?>
+                                <h2 class="h6 herald-mod-h herald-color">
+                                    <?php echo $topCate['name']; ?>
+                                    <i class="fa fa-angle-down herald-sub-cat-icon" aria-hidden="true"></i>
                                     <div class="herald-mod-subnav-mobile">
-                                        <a href="https://demo.mekshq.com/herald/?cat=48">Celebrities</a>
-                                        <a href="https://demo.mekshq.com/herald/?cat=43">Movies</a>
-                                        <a href="https://demo.mekshq.com/herald/?cat=42">Music</a>
+                                        <?php if (!empty($topCate['sub_cates'])): ?>
+                                        <?php foreach ($topCate['sub_cates'] as $tsc): ?>
+                                        <a href="<?php echo $BASE_URL;?>/cates/<?php echo $tsc['id'];?>"><?php echo $tsc['name'];?></a>
+                                        <?php endforeach; ?>
+                                        <?php endif; ?>
                                     </div>
                                 </h2>
                             </div>
                             <div class="herald-mod-subnav">
-                                <a href="https://demo.mekshq.com/herald/?cat=48">Celebrities</a>
-                                <a href="https://demo.mekshq.com/herald/?cat=43">Movies</a>
-                                <a href="https://demo.mekshq.com/herald/?cat=42">Music</a>
+                                <?php if (!empty($topCate['sub_cates'])): ?>
+                                <?php foreach ($topCate['sub_cates'] as $tsc): ?>
+                                <?php $topCateIds[] = $tsc['id']; ?>
+                                <a href="<?php echo $BASE_URL;?>/cates/<?php echo $tsc['id'];?>"><?php echo $tsc['name'];?></a>
+                                <?php endforeach; ?>
+                                <?php endif; ?>
                             </div>
                             <div class="herald-mod-actions">
-                                <a class="herald-all-link" href="https://demo.mekshq.com/herald/?cat=6">View All</a>
+                                <a class="herald-all-link" href="<?php echo $BASE_URL;?>/cates/<?php echo $topCate['id'];?>">View All</a>
                                 <div class="herald-slider-controls" data-col="4" data-autoplay="0"></div>
                             </div>
                         </div>
                     </div>			
                     <div class="row herald-posts row-eq-height herald-slider">
-                        <?php for ($i = 1; $i < 6; $i++): ?>
+                        <?php foreach ($data['posts'] as $k => $p): ?>
+                        <?php if (in_array($p['cate_id'], $topCateIds)): ?>
                             <article class="herald-lay-f post type-post status-publish format-standard has-post-thumbnail hentry">
                                 <div class="herald-post-thumbnail herald-format-icon-middle">
-                                    <a href="https://demo.mekshq.com/herald/?p=171" title="Start recording like a pro with the help of these 6 tips">
-                                        <img width="300" height="168" src="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald043-300x168.jpg" class="attachment-herald-lay-f size-herald-lay-f wp-post-image" alt="" srcset="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald043-300x168.jpg 300w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald043-990x556.jpg 990w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald043-1320x742.jpg 1320w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald043-470x264.jpg 470w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald043-640x360.jpg 640w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald043-215x120.jpg 215w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald043-414x232.jpg 414w" sizes="(max-width: 300px) 100vw, 300px" />							
+                                    <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['id'];?>" title="<?php echo $p['name'];?>">
+                                        <img width="300" height="168" src="<?php echo $p['image'];?>" class="attachment-herald-lay-f size-herald-lay-f wp-post-image" alt="" sizes="(max-width: 300px) 100vw, 300px" />							
                                     </a>
                                 </div>
                                 <div class="entry-header">
                                     <span class="meta-category meta-small">
-                                        <a href="https://demo.mekshq.com/herald/?cat=6" class="herald-cat-6">Entertainment</a>
+                                        <a href="<?php echo $BASE_URL;?>/cates/<?php echo $p['cate_id'];?>" class="herald-cat-<?php echo $p['cate_id'];?>"><?php echo $p['cate_name'];?></a>
                                     </span>
                                     <h2 class="entry-title h5">
-                                        <a href="https://demo.mekshq.com/herald/?p=171">Start recording like a pro with the help of these 6 tips</a>
+                                        <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['id'];?>"><?php echo $p['name'];?></a>
                                     </h2>
                                     <div class="entry-meta meta-small">
                                         <div class="meta-item herald-views">4,613 Views</div>
@@ -87,177 +106,85 @@
                                     </div>
                                 </div>
                             </article>
-                        <?php endfor; ?>
+                        <?php endif; ?>
+                        <?php endforeach; ?>
                     </div>
                 </div>
                 <?php echo $this->element('Banner/728x90'); ?>
-                <div class="herald-module col-lg-4 col-md-4 col-sm-4" id="herald-module-1-3" data-col="4">
+                
+                <?php foreach ($settings['homepage_sub_cate'] as $sc): ?>
+                <?php
+                $_subCate = array();
+                $_count = 0;
+                foreach ($cates as $c) {
+                    if ($c['id'] == $sc) {
+                        $_subCate = $c;
+                        break;
+                    }
+                }
+                ?>
+                <div class="herald-module col-lg-4 col-md-4 col-sm-4" id="herald-module-1-<?php echo $_subCate['id'];?>" data-col="4">
                     <div class="herald-mod-wrap">
-                        <div class="herald-mod-head herald-cat-2">
+                        <div class="herald-mod-head herald-cat-<?php echo $_subCate['id'];?>">
                             <div class="herald-mod-title">
-                                <h2 class="h6 herald-mod-h herald-color">Travel</h2>
+                                <h2 class="h6 herald-mod-h herald-color"><?php echo $_subCate['name'];?></h2>
                             </div>
                         </div>
                     </div>			
                     <div class="row herald-posts row-eq-height ">
-                        <article class="herald-lay-f herald-lay-f1 type-post status-publish format-standard has-post-thumbnail hentry category-travel">
+                        <?php foreach ($data['posts'] as $p): ?>
+                        <?php if ($p['cate_id'] == $_subCate['id']): ?>
+                        <?php if ($_count == 0): ?>
+                        <article class="herald-lay-f herald-lay-f1 type-post status-publish format-standard has-post-thumbnail hentry">
                             <div class="herald-ovrld">		
                                 <div class="herald-post-thumbnail">
-                                    <a href="https://demo.mekshq.com/herald/?p=140" title="The top 10 traveling taboos you should break">
-                                        <img width="300" height="200" src="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald120-300x200.jpg" class="attachment-herald-lay-b1 size-herald-lay-b1 wp-post-image" alt="" srcset="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald120-300x200.jpg 300w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald120-768x512.jpg 768w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald120-1024x683.jpg 1024w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald120-414x276.jpg 414w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald120-470x313.jpg 470w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald120-640x426.jpg 640w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald120-130x86.jpg 130w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald120-187x124.jpg 187w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald120-990x660.jpg 990w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald120.jpg 1320w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald120-600x400.jpg 600w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald120-800x533.jpg 800w" sizes="(max-width: 300px) 100vw, 300px" />
+                                    <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['id']; ?>" title="<?php echo $p['name']; ?>">
+                                        <img width="300" height="200" src="<?php echo $p['image']; ?>" class="attachment-herald-lay-b1 size-herald-lay-b1 wp-post-image" alt="<?php echo $p['name']; ?>" sizes="(max-width: 300px) 100vw, 300px" />
                                     </a>
                                 </div>
                                 <div class="entry-header herald-clear-blur">
                                     <span class="meta-category">
-                                        <a href="https://demo.mekshq.com/herald/?cat=2" class="herald-cat-2">Travel</a>
+                                        <a href="<?php echo $BASE_URL;?>/cates/<?php echo $p['cate_id']; ?>" class="herald-cat-<?php echo $p['cate_id']; ?>"><?php echo $p['cate_name']; ?></a>
                                     </span>
                                     <h2 class="entry-title h6">
-                                        <a href="https://demo.mekshq.com/herald/?p=140">The top 10 traveling taboos you should break</a>
+                                        <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['id']; ?>"><?php echo $p['name']; ?></a>
                                     </h2>
                                     <div class="entry-meta">
                                         <div class="meta-item herald-date">
-                                            <span class="updated">1 week ago</span>
+                                            <span class="updated"><?php echo date('Y-m-d', $p['created']); ?></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </article>
+                        <?php else: ?>
                         <article class="herald-lay-g post type-post status-publish format-standard has-post-thumbnail hentry">
                             <div class="row">
                                 <div class="col-lg-4 col-xs-3 col-sm-4">
                                     <div class="herald-post-thumbnail">
-                                        <a href="https://demo.mekshq.com/herald/?p=125" title="Why do people think the beach is a good idea?">
-                                            <img width="74" height="55" src="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald091-74x55.jpg" class="attachment-herald-lay-g1 size-herald-lay-g1 wp-post-image" alt="" srcset="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald091-74x55.jpg 74w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald091-111x83.jpg 111w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald091-215x161.jpg 215w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald091-300x225.jpg 300w" sizes="(max-width: 74px) 100vw, 74px" />			
+                                        <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['id']; ?>" title="<?php echo $p['name']; ?>">
+                                            <img width="74" height="55" src="<?php echo $p['image']; ?>" class="attachment-herald-lay-g1 size-herald-lay-g1 wp-post-image" alt="" sizes="(max-width: 74px) 100vw, 74px" />			
                                         </a>
                                     </div>
                                 </div>
                                 <div class="col-lg-8 col-xs-9 col-sm-8 herald-no-pad">
                                     <div class="entry-header">
                                         <span class="meta-category meta-small">
-                                            <a href="https://demo.mekshq.com/herald/?cat=2" class="herald-cat-2">Travel</a>
+                                            <a href="<?php echo $BASE_URL;?>/cates/<?php echo $p['cate_id']; ?>" class="herald-cat-<?php echo $p['cate_id']; ?>"><?php echo $p['cate_name']; ?></a>
                                         </span>
                                         <h2 class="entry-title h7">
-                                            <a href="https://demo.mekshq.com/herald/?p=125">Why do people think the beach is a good idea?</a>
+                                            <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['id']; ?>"><?php echo $p['name']; ?></a>
                                         </h2>
                                     </div>
                                 </div>
                             </div>
                         </article>
+                        <?php endif; ?>
+                        <?php $_count++; endif; ?>
+                        <?php endforeach; ?>
                     </div>
                 </div>
-
-
-                <div class="herald-module col-lg-4 col-md-4 col-sm-4" id="herald-module-1-4" data-col="4">
-                    <div class="herald-mod-wrap">
-                        <div class="herald-mod-head herald-cat-3">
-                            <div class="herald-mod-title">
-                                <h2 class="h6 herald-mod-h herald-color">Fashion</h2>
-                            </div>
-                        </div>
-                    </div>			
-                    <div class="row herald-posts row-eq-height ">
-                        <article class="herald-lay-f herald-lay-f1 post type-post status-publish format-standard has-post-thumbnail hentry">
-                            <div class="herald-ovrld">		
-                                <div class="herald-post-thumbnail">
-                                    <a href="https://demo.mekshq.com/herald/?p=182" title="The beginner&#8217;s guide to buying the right skirt">
-                                        <img width="300" height="200" src="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald104-300x200.jpg" class="attachment-herald-lay-b1 size-herald-lay-b1 wp-post-image" alt="" srcset="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald104-300x200.jpg 300w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald104-768x513.jpg 768w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald104-1024x683.jpg 1024w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald104-414x276.jpg 414w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald104-470x313.jpg 470w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald104-640x426.jpg 640w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald104-130x86.jpg 130w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald104-187x124.jpg 187w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald104-990x661.jpg 990w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald104.jpg 1320w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald104-600x400.jpg 600w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald104-800x534.jpg 800w" sizes="(max-width: 300px) 100vw, 300px" />
-                                    </a>
-                                </div>
-                                <div class="entry-header herald-clear-blur">
-                                    <span class="meta-category">
-                                        <a href="https://demo.mekshq.com/herald/?cat=3" class="herald-cat-3">Fashion</a>
-                                    </span>
-                                    <h2 class="entry-title h6">
-                                        <a href="https://demo.mekshq.com/herald/?p=182">The beginner&#8217;s guide to buying the right skirt</a>
-                                    </h2>
-                                    <div class="entry-meta">
-                                        <div class="meta-item herald-date">
-                                            <span class="updated">1 week ago</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-
-
-                        <article class="herald-lay-g post type-post status-publish format-standard has-post-thumbnail hentry">
-                            <div class="row">
-                                <div class="col-lg-4 col-xs-3 col-sm-4">
-                                    <div class="herald-post-thumbnail">
-                                        <a href="https://demo.mekshq.com/herald/?p=144" title="How to make your accessories look like a million bucks">
-                                            <img width="74" height="55" src="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald125-74x55.jpg" class="attachment-herald-lay-g1 size-herald-lay-g1 wp-post-image" alt="" srcset="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald125-74x55.jpg 74w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald125-111x83.jpg 111w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald125-215x161.jpg 215w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald125-300x225.jpg 300w" sizes="(max-width: 74px) 100vw, 74px" />			
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-8 col-xs-9 col-sm-8 herald-no-pad">
-                                    <div class="entry-header">
-                                        <span class="meta-category meta-small">
-                                            <a href="https://demo.mekshq.com/herald/?cat=3" class="herald-cat-3">Fashion</a>
-                                        </span>
-                                        <h2 class="entry-title h7">
-                                            <a href="https://demo.mekshq.com/herald/?p=144">How to make your accessories look like a million bucks</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="herald-module col-lg-4 col-md-4 col-sm-4" id="herald-module-1-5" data-col="4">
-                    <div class="herald-mod-wrap">
-                        <div class="herald-mod-head herald-cat-4">
-                            <div class="herald-mod-title">
-                                <h2 class="h6 herald-mod-h herald-color">Food & Drinks</h2>
-                            </div>
-                        </div>
-                    </div>			
-                    <div class="row herald-posts row-eq-height ">
-                        <article class="herald-lay-f herald-lay-f1 post type-post status-publish format-standard has-post-thumbnail hentry">
-                            <div class="herald-ovrld">		
-                                <div class="herald-post-thumbnail">
-                                    <a href="https://demo.mekshq.com/herald/?p=174" title="This is how coffee can help you predict the future">
-                                        <img width="300" height="200" src="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/05/herald034-e1447696639921-300x200.jpg" class="attachment-herald-lay-b1 size-herald-lay-b1 wp-post-image" alt="" srcset="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/05/herald034-e1447696639921-300x200.jpg 300w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/05/herald034-e1447696639921-414x276.jpg 414w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/05/herald034-e1447696639921-470x313.jpg 470w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/05/herald034-e1447696639921-640x426.jpg 640w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/05/herald034-e1447696639921-130x86.jpg 130w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/05/herald034-e1447696639921-187x124.jpg 187w" sizes="(max-width: 300px) 100vw, 300px" />
-                                    </a>
-                                </div>
-                                <div class="entry-header herald-clear-blur">
-                                    <span class="meta-category">
-                                        <a href="https://demo.mekshq.com/herald/?cat=4" class="herald-cat-4">Food &amp; Drinks</a>
-                                    </span>
-                                    <h2 class="entry-title h6">
-                                        <a href="https://demo.mekshq.com/herald/?p=174">This is how coffee can help you predict the future</a>
-                                    </h2>
-                                    <div class="entry-meta">
-                                        <div class="meta-item herald-date">
-                                            <span class="updated">1 week ago</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="herald-lay-g post type-post status-publish format-image has-post-thumbnail hentry">
-                            <div class="row">
-                                <div class="col-lg-4 col-xs-3 col-sm-4">
-                                    <div class="herald-post-thumbnail">
-                                        <a href="https://demo.mekshq.com/herald/?p=187" title="11 reasons why making your own food is essential">
-                                            <img width="74" height="55" src="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald003-74x55.jpg" class="attachment-herald-lay-g1 size-herald-lay-g1 wp-post-image" alt="" srcset="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald003-74x55.jpg 74w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald003-111x83.jpg 111w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald003-215x161.jpg 215w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald003-300x225.jpg 300w" sizes="(max-width: 74px) 100vw, 74px" />			
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-8 col-xs-9 col-sm-8 herald-no-pad">
-                                    <div class="entry-header">
-                                        <span class="meta-category meta-small">
-                                            <a href="https://demo.mekshq.com/herald/?cat=4" class="herald-cat-4">Food &amp; Drinks</a>
-                                        </span>
-                                        <h2 class="entry-title h7">
-                                            <a href="https://demo.mekshq.com/herald/?p=187"><span class="herald-format-icon"><i class="fa fa-picture-o"></i></span>11 reasons why making your own food is essential</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
         <div class="herald-sidebar col-lg-3 col-md-3 herald-sidebar-right">

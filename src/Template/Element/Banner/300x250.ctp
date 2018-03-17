@@ -1,3 +1,4 @@
+<?php if (!empty($settings['show_adv'])): ?>
 <div class="herald-sticky">
     <div id="mks_ads_widget-12" class="widget mks_ads_widget">
         <ul class="mks_adswidget_ul large">
@@ -9,3 +10,4 @@
         </ul>
     </div>			
 </div>
+<?php endif; ?>

@@ -48,11 +48,9 @@
         <div id="content" class="herald-site-content herald-slide">
             <?= $this->fetch('content'); ?>
         </div>
-        <div class="herald-ad herald-slide herald-above-footer">
-            <a href="conlataca.info">
-                <img src="<?php echo $BASE_URL;?>/img/banner728x90_white.jpg" alt="" />
-            </a>
-        </div>
+        
+        <?= $this->element('Banner/728x90_footer'); ?>
+        
         <footer id="footer" class="herald-site-footer herald-slide">
             <?= $this->element('Layout/footer'); ?>
         </footer>

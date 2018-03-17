@@ -14,11 +14,7 @@
                         </div>
                     </div>
                     <div class="hel-r herald-go-hor">
-                        <div class="herald-ad hidden-xs">
-                            <a href="<?php echo $BASE_URL;?>">
-                                <img src="<?php echo $BASE_URL;?>/img/banner728x90_white.jpg" alt="" />
-                            </a>
-                        </div>
+                        <?php echo $this->element('Banner/728x90_top');?>
                     </div>
                 </div>
             </div>
