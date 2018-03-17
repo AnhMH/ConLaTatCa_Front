@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 ">		
                 <div class="row  " data-col="6">
-                    <?php foreach ($lastest_post as $lp): ?>
+                    <?php foreach ($latest_post as $lp): ?>
                         <div class="col-lg-2 col-md-2">
                             <div class="herald-post-thumbnail">
                                 <a href="<?php echo $BASE_URL; ?>/articles/<?php echo $lp['id']; ?>" title="<?php echo $lp['name']; ?>">

@@ -296,16 +296,16 @@
                         </div>
                     </div>			
                     <div class="row herald-posts row-eq-height ">
-                        <?php foreach ($lastest_post as $k => $p): ?>
+                        <?php foreach ($latest_post as $k => $p): ?>
                             <?php if ($k == 0): ?>
-                                <?php echo $this->element('Post/lastest_post1', $p); ?>
+                                <?php echo $this->element('Post/latest_post1', $p); ?>
                             <?php else: ?>
-                                <?php echo $this->element('Post/lastest_post', $p); ?>
+                                <?php echo $this->element('Post/latest_post', $p); ?>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
                     <nav class="herald-pagination herald-load-more">
-                        <a href="https://demo.mekshq.com/herald/?paged=2" >Load More</a>		
+                        <a href="<?php echo $BASE_URL;?>" >Load More</a>		
                         <div class="herald-loader">
                             <div class="spinner">
                                 <div class="bounce1"></div>

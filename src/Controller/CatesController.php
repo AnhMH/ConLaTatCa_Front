@@ -20,10 +20,8 @@ class CatesController extends AppController {
             'limit' => 7
         );
         $data = Api::call(Configure::read('API.url_posts_all'), $param);
+        $param['cate_name'] = !empty($data[0]['cate_name']) ? $data[0]['cate_name'] : '';
         $this->set('data', $data);
         $this->set('param', $param);
-//        echo '<pre>';
-//        print_r($data);
-//        die();
     }
 }

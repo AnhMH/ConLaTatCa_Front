@@ -4,7 +4,7 @@
             <div class="herald-mod-wrap">
                 <div class="herald-mod-head herald-cat-<?php echo $param['cate_id']; ?>">
                     <div class="herald-mod-title">
-                        <h1 class="h6 herald-mod-h herald-color herald-subcat-dropdown">Entertainment</h1>
+                        <h1 class="h6 herald-mod-h herald-color herald-subcat-dropdown"><?php echo $param['cate_name']; ?></h1>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                                         <img width="990" height="556" src="<?php echo $p['image']; ?>" class="attachment-herald-lay-a size-herald-lay-a wp-post-image" alt="" sizes="(max-width: 990px) 100vw, 990px">
                                     </a>
                                 </div>
-                                <div class="herald-lay-over">
+                                <div class="herald-lay-over transparent">
                                     <div class="entry-header herald-pf-invert">
                                         <span class="meta-category">
                                             <a href="<?php echo $BASE_URL; ?>/cates/<?php echo $p['id']; ?>" class="herald-cat-<?php echo $p['cate_id']; ?>"><?php echo $p['cate_name']; ?></a></span>

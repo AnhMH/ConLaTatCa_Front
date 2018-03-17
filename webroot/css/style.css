@@ -13790,3 +13790,7 @@ ul.mks_themeforest_widget_ul li img{
 .mks_read_more{
     margin-top: 10px;
 }
+
+.herald-lay-a .herald-lay-over.transparent {
+    background: rgba(255,255,255,0.8);
+}

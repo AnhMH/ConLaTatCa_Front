@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="vi-VN">
+<html lang="vi">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title><?php echo !empty($pageTitle) ? $pageTitle : $webTitle; ?></title>
+        <title><?php echo !empty($pageTitle) ? $pageTitle : $settings['web_title']; ?></title>
         
-        <meta name="desctiption" content="<?php echo !empty($pageDescription) ? $pageDescription : $webDescription; ?>" />
+        <meta name="desctiption" content="<?php echo !empty($pageDescription) ? $pageDescription : $settings['web_description']; ?>" />
+        <meta name="keywords" content="<?php echo !empty($pageKeyword) ? $pageKeyword : $settings['web_keyword']; ?>">
         
         <meta name="generator" content="ConLaTatCa" />
         <meta name="msapplication-TileImage" content="" />

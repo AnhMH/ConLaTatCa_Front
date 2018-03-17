@@ -1,7 +1,7 @@
 <div id="herald_posts_widget-9" class="widget herald_posts_widget">
     <h4 class="widget-title h6"><span>Featured</span></h4>
     <div class="row ">
-        <?php foreach ($lastest_post as $p): ?>
+        <?php foreach ($latest_post as $p): ?>
         <article class="herald-lay-g post type-post status-publish format-gallery has-post-thumbnail hentry">
             <div class="row">
                 <div class="col-lg-4 col-xs-3">

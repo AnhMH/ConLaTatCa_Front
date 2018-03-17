@@ -112,10 +112,8 @@ class AppController extends Controller
         // Set common data
         $settings = $this->getSettings();
         $this->set('cates', $settings['cates']);
-        $this->set('lastest_post', $settings['lastest_post']);
-        $this->set('webTitle', 'Con Là Tất Cả');
-        $this->set('webDescription', 'Con Là Tất Cả');
-        $this->set('webKeyword', 'Con Là Tất Cả');
+        $this->set('latest_post', $settings['latest_post']);
+        $this->set('settings', $settings['settings']);
         
         // Set default layout
         $this->setLayout();

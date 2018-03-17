@@ -1,5 +1,5 @@
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item current_page_item current-menu-ancestor current_page_ancestor">
-    <a href="<?php echo $BASE_URL;?>">Home</a>
+    <a href="<?php echo $BASE_URL;?>">Trang chủ</a>
 </li>
 <?php if (!empty($cates)): ?>
 <?php foreach ($cates as $cate): ?>
