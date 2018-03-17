@@ -191,19 +191,21 @@
             <div id="herald_posts_widget-8" class="widget herald_posts_widget">
                 <h4 class="widget-title h6"><span>Media of the day</span></h4>
                 <div class="row">
+                    <?php foreach ($data['medias'] as $p): ?>
                     <article class="herald-lay-f post type-post status-publish format-video has-post-thumbnail hentry post_format-post-format-video">
                         <div class="herald-post-thumbnail herald-format-icon-middle">
-                            <a href="https://demo.mekshq.com/herald/?p=61" title="Add some flair to your relationship: go hiking together">
-                                <img width="300" height="168" src="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald058-300x168.jpg" class="attachment-herald-lay-f size-herald-lay-f wp-post-image" alt="" srcset="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald058-300x168.jpg 300w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald058-990x556.jpg 990w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald058-1320x742.jpg 1320w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald058-470x264.jpg 470w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald058-640x360.jpg 640w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald058-215x120.jpg 215w, https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/11/herald058-414x232.jpg 414w" sizes="(max-width: 300px) 100vw, 300px" />				
+                            <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['id'];?>" title="<?php echo $p['name'];?>">
+                                <img width="300" height="168" src="<?php echo $p['image'];?>" class="attachment-herald-lay-f size-herald-lay-f wp-post-image" alt="<?php echo $p['name'];?>" sizes="(max-width: 300px) 100vw, 300px" />				
                                 <span class="herald-format-icon"><i class="fa fa-play"></i></span>			
                             </a>
                         </div>
                         <div class="entry-header">
                             <h2 class="entry-title h5">
-                                <a href="https://demo.mekshq.com/herald/?p=61">Add some flair to your relationship: go hiking together</a>
+                                <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['id'];?>"><?php echo $p['name'];?></a>
                             </h2>
                         </div>
                     </article>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <?php echo $this->element('Banner/300x250'); ?>
