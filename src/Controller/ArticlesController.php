@@ -29,5 +29,8 @@ class ArticlesController extends AppController {
         if (!empty($data['keyword'])) {
             $this->set('pageKeyword', $data['keyword']);
         }
+        if (!empty($data['image'])) {
+            $this->set('pageImage', $data['image']);
+        }
     }
 }

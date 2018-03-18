@@ -5,32 +5,36 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title><?php echo !empty($pageTitle) ? $pageTitle : $settings['web_title']; ?></title>
         
-        <meta name="desctiption" content="<?php echo !empty($pageDescription) ? $pageDescription : $settings['web_description']; ?>" />
+        <meta name="description" itemprop="description" content="<?php echo !empty($pageDescription) ? $pageDescription : $settings['web_description']; ?>" />
         <meta name="keywords" content="<?php echo !empty($pageKeyword) ? $pageKeyword : $settings['web_keyword']; ?>">
         
+        <meta property="og:title" content="<?php echo !empty($pageTitle) ? $pageTitle : $settings['web_title']; ?>" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="<?php echo $current_url;?>" />
+        <meta property="og:image" content="<?php echo !empty($pageImage) ? $pageImage : $settings['web_image']; ?>" />
+        <meta property="og:site_name" content="<?php echo $settings['web_title']; ?>" />
+        <meta property="og:description" content="<?php echo !empty($pageDescription) ? $pageDescription : $settings['web_description']; ?>" />
+       
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="<?php echo !empty($pageTitle) ? $pageTitle : $settings['web_title']; ?>" />
+        <meta name="twitter:description" content="<?php echo !empty($pageDescription) ? $pageDescription : $settings['web_description']; ?>" />
+        <meta name="twitter:image" content="<?php echo !empty($pageImage) ? $pageImage : $settings['web_image']; ?>" />
+        <meta itemprop="image" content="<?php echo !empty($pageImage) ? $pageImage : $settings['web_image']; ?>" />
+
         <meta name="generator" content="ConLaTatCa" />
-        <meta name="msapplication-TileImage" content="" />
         
         <link rel='dns-prefetch' href='//fonts.googleapis.com' />
         <link rel='dns-prefetch' href='//s.w.org' />
-        <link rel="alternate" type="application/rss+xml" title="" href="" />
         
-        <link rel='https://api.w.org/' href='' />
-        <link rel="EditURI" type="application/rsd+xml" title="RSD" href="" />
-        <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="" /> 
-        
-        <link rel="canonical" href="<?php echo $BASE_URL;?>" />
-        <link rel='shortlink' href='' />
-        <link rel="alternate" type="application/json+oembed" href="" />
-        <link rel="alternate" type="text/xml+oembed" href="" />
+        <link rel="canonical" href="<?php echo $current_url;?>" />
 
         <!--[if IE 7]>
         <link rel="stylesheet" href="css/style-ie7.css">
         <![endif]-->
 
-        <link rel="icon" href="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/12/cropped-favicon_default-65x65.png" sizes="32x32" />
-        <link rel="icon" href="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/12/cropped-favicon_default-300x300.png" sizes="192x192" />
-        <link rel="apple-touch-icon-precomposed" href="https://mksdmcdn-9b59.kxcdn.com/herald/wp-content/uploads/2015/12/cropped-favicon_default-180x180.png" />
+        <link rel="icon" href="<?php echo $BASE_URL;?>/img/cropped-favicon_default-65x65.png" sizes="32x32" />
+        <link rel="icon" href="<?php echo $BASE_URL;?>/img/cropped-favicon_default-300x300.png" sizes="192x192" />
+        <link rel="apple-touch-icon-precomposed" href="<?php echo $BASE_URL;?>/img/cropped-favicon_default-180x180.png" />
         
         <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
         <link rel='stylesheet'  href='<?php echo $BASE_URL; ?>/css/style.css?<?php echo FILE_VERSION; ?>' type='text/css' media='all' />
