@@ -1,25 +1,31 @@
+<?php
+$_description = !empty($pageDescription) ? $pageDescription : $settings['web_description'];
+$_keyword = !empty($pageKeyword) ? $pageKeyword : $settings['web_keyword'];
+$_title = !empty($pageTitle) ? $pageTitle : $settings['web_title'];
+$_image = !empty($pageImage) ? $pageImage : $settings['web_image'];
+?>
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" itemscope itemtype="http://schema.org/Article" prefix="og: http://ogp.me/ns#">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title><?php echo !empty($pageTitle) ? $pageTitle : $settings['web_title']; ?></title>
+        <title><?php echo $_title; ?></title>
         
-        <meta name="description" itemprop="description" content="<?php echo !empty($pageDescription) ? $pageDescription : $settings['web_description']; ?>" />
-        <meta name="keywords" content="<?php echo !empty($pageKeyword) ? $pageKeyword : $settings['web_keyword']; ?>">
+        <meta name="description" itemprop="description" content="<?php echo $_description; ?>" />
+        <meta name="keywords" content="<?php echo $_keyword; ?>">
         
-        <meta property="og:title" content="<?php echo !empty($pageTitle) ? $pageTitle : $settings['web_title']; ?>" />
+        <meta property="og:title" content="<?php echo $_title; ?>" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="<?php echo $current_url;?>" />
-        <meta property="og:image" content="<?php echo !empty($pageImage) ? $pageImage : $settings['web_image']; ?>" />
+        <meta property="og:image" content="<?php echo $_image; ?>" />
         <meta property="og:site_name" content="<?php echo $settings['web_title']; ?>" />
-        <meta property="og:description" content="<?php echo !empty($pageDescription) ? $pageDescription : $settings['web_description']; ?>" />
+        <meta property="og:description" content="<?php echo $_description; ?>" />
        
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="<?php echo !empty($pageTitle) ? $pageTitle : $settings['web_title']; ?>" />
-        <meta name="twitter:description" content="<?php echo !empty($pageDescription) ? $pageDescription : $settings['web_description']; ?>" />
-        <meta name="twitter:image" content="<?php echo !empty($pageImage) ? $pageImage : $settings['web_image']; ?>" />
-        <meta itemprop="image" content="<?php echo !empty($pageImage) ? $pageImage : $settings['web_image']; ?>" />
+        <meta name="twitter:title" content="<?php echo $_title; ?>" />
+        <meta name="twitter:description" content="<?php echo $_description; ?>" />
+        <meta name="twitter:image" content="<?php echo $_image; ?>" />
+        <meta itemprop="image" content="<?php echo $_image; ?>" />
 
         <meta name="generator" content="ConLaTatCa" />
         
