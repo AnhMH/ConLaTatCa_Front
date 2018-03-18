@@ -70,6 +70,19 @@ class AppController extends Controller
      * @param Event $event
      */
     public function beforeFilter(Event $event) {
+        // Redirect https
+        if (Configure::read('Config.HTTPS') === true) {
+            // ロードバランサへHTTPSでアクセスされた場合
+            if (isset($_SERVER['HTTP_X_FORWARDED_PORT']) && 443 == $_SERVER['HTTP_X_FORWARDED_PORT']) {
+                // ベースURLをHTTPSに書き直す
+                Router::fullbaseUrl('https://' . $_SERVER['HTTP_HOST']);
+            }
+            if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == "http") {
+                return $this->redirect('https://' . env('SERVER_NAME') . $this->here);
+            } elseif (!isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 80) {
+                return $this->redirect('https://' . env('SERVER_NAME') . $this->here);
+            }
+        }
         parent::beforeFilter($event);
         
         // Start session

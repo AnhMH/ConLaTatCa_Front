@@ -69,6 +69,18 @@ if (!env('APP_NAME') && file_exists(CONFIG . '.env')) {
 try {
     Configure::config('default', new PhpConfig());
     Configure::load('app', 'default', false);
+    
+    // Load for each environment.
+    $env = getenv('FUEL_ENV');
+    if (!$env) {
+        $env = 'development';
+    }
+
+    if ($env == 'production') {
+        Configure::load('production/app', 'default', true);
+    } else {
+        Configure::load('development/app', 'default', true);
+    }
 } catch (\Exception $e) {
     exit($e->getMessage() . "\n");
 }
