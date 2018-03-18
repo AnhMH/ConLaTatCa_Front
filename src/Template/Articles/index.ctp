@@ -5,7 +5,7 @@
             <div class="col-lg-9 col-md-9 col-mod-single col-mod-main">
                 <header class="entry-header">
                     <span class="meta-category">
-                        <a href="<?php echo $BASE_URL;?>/cates/<?php echo $data['cate_id']; ?>" class="herald-cat-<?php echo $data['cate_id']; ?>"><?php echo $data['cate_name']; ?></a>
+                        <a href="<?php echo $BASE_URL;?>/cates/<?php echo $data['cate_url']; ?>" class="herald-cat-<?php echo $data['cate_id']; ?>"><?php echo $data['cate_name']; ?></a>
                     </span>
                     <h1 class="entry-title h1"><?php echo $data['name']; ?></h1>			
                     <div class="entry-meta entry-meta-single">
@@ -103,17 +103,17 @@
                                     <article class="herald-lay-f herald-lay-f1 post type-post status-publish format-standard has-post-thumbnail hentry">
                                         <div class="herald-ovrld" style="height: 188px;">		
                                             <div class="herald-post-thumbnail">
-                                                <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['id'];?>" title="<?php echo $p['name'];?>">
+                                                <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['url'];?>" title="<?php echo $p['name'];?>">
                                                     <img width="300" height="200" src="<?php echo $p['image'];?>" class="attachment-herald-lay-b1 size-herald-lay-b1 wp-post-image" alt="" sizes="(max-width: 300px) 100vw, 300px">
                                                 </a>
                                             </div>
 
                                             <div class="entry-header herald-clear-blur" style="height: 104px;">
                                                 <span class="meta-category">
-                                                    <a href="<?php echo $BASE_URL;?>/cates/<?php echo $p['cate_id'];?>" class="herald-cat-<?php echo $p['cate_id'];?>"><?php echo $p['cate_name'];?></a>
+                                                    <a href="<?php echo $BASE_URL;?>/cates/<?php echo $p['cate_url'];?>" class="herald-cat-<?php echo $p['cate_id'];?>"><?php echo $p['cate_name'];?></a>
                                                 </span>
                                                 <h2 class="entry-title h6">
-                                                    <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['id'];?>"><?php echo $p['name'];?></a>
+                                                    <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['url'];?>"><?php echo $p['name'];?></a>
                                                 </h2>
                                                 <div class="entry-meta">
                                                     <div class="meta-item herald-date">

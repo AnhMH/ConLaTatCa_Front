@@ -13,15 +13,17 @@ class CatesController extends AppController {
     /**
      * People top page
      */
-    public function index($id = '') {
+    public function index($url = '') {
         $ids = array();
-        $ids[] = $id;
+        $rootId = '';
         $cateName = '';
         foreach ($this->_settings['cates'] as $c) {
-            if ($c['id'] == $id) {
+            if ($c['url'] == $url) {
                 $cateName = $c['name'];
+                $ids[] = $c['id'];
+                $rootId = $c['id'];
             }
-            if ($c['root_id'] == $id) {
+            if (!empty($rootId) && $c['root_id'] == $rootId) {
                 $ids[] = $c['id'];
             }
         }

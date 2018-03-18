@@ -1,14 +1,14 @@
 <article class="herald-lay-a post type-post status-publish format-standard has-post-thumbnail hentry">
     <div class="herald-ovrld">
         <div class="herald-post-thumbnail">
-            <a href="<?php echo $BASE_URL; ?>/articles/<?php echo $id; ?>" title="<?php echo $name; ?>">
+            <a href="<?php echo $BASE_URL; ?>/articles/<?php echo $url; ?>" title="<?php echo $name; ?>">
                 <img width="990" height="556" src="<?php echo $image; ?>" class="attachment-herald-lay-a size-herald-lay-a wp-post-image" alt="" sizes="(max-width: 990px) 100vw, 990px" />
             </a>
         </div>
         <div class="entry-header herald-pf herald-clear-blur">
-            <span class="meta-category"><a href="<?php echo $BASE_URL; ?>/cates/<?php echo $cate_id; ?>" class="herald-cat-<?php echo $cate_id; ?>"><?php echo $cate_name; ?></a></span>
+            <span class="meta-category"><a href="<?php echo $BASE_URL; ?>/cates/<?php echo $cate_url; ?>" class="herald-cat-<?php echo $cate_id; ?>"><?php echo $cate_name; ?></a></span>
             <h2 class="entry-title h2">
-                <a href="<?php echo $BASE_URL; ?>/articles/<?php echo $id; ?>"><?php echo $name; ?></a>
+                <a href="<?php echo $BASE_URL; ?>/articles/<?php echo $url; ?>"><?php echo $name; ?></a>
             </h2>		
             <div class="entry-meta">
                 <div class="meta-item herald-date">

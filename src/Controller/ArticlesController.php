@@ -13,9 +13,10 @@ class ArticlesController extends AppController {
     /**
      * People top page
      */
-    public function index($id = '') {
+    public function index($url = '') {
+        $url = explode('.', $url);
         $param = array(
-            'id' => $id,
+            'url' => $url[0],
             'get_relations' => 1
         );
         $data = Api::call(Configure::read('API.url_posts_detail'), $param);
