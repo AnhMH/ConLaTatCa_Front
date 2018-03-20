@@ -8,7 +8,7 @@
                         <div class="site-branding">
                             <h1 class="site-title h1">
                                 <a href="<?php echo $BASE_URL;?>" rel="home">
-                                    <img class="herald-logo" src="<?php echo $BASE_URL;?>/img/conlatatca_logo.png" alt="Conlatatca" >
+                                    <img class="herald-logo" src="<?php echo $BASE_URL;?>/img/logotest.png" alt="Conlatatca" >
                                 </a>
                             </h1>
                         </div>
@@ -64,7 +64,7 @@
                     <div class="site-branding mini">
                         <span class="site-title h1">
                             <a href="<?php echo $BASE_URL;?>" rel="home">
-                                <img class="herald-logo-mini" src="<?php echo $BASE_URL;?>/img/conlatatca_logo_mini.png" alt="Conlatatca">
+                                <img class="herald-logo-mini" src="<?php echo $BASE_URL;?>/img/logotest_mini.png" alt="Conlatatca">
                             </a>
                         </span>
                     </div>
@@ -87,7 +87,7 @@
         <div class="site-branding mini">
             <span class="site-title h1">
                 <a href="<?php echo $BASE_URL;?>" rel="home">
-                    <img class="herald-logo-mini" src="<?php echo $BASE_URL;?>/img/conlatatca_logo_mini.png" alt="Herald" >
+                    <img class="herald-logo-mini" src="<?php echo $BASE_URL;?>/img/logotest_mini.png" alt="Herald" >
                 </a>
             </span>
         </div>
