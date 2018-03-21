@@ -41,10 +41,7 @@ $_image = !empty($pageImage) ? $pageImage : $settings['web_image'];
         <link rel="icon" href="<?php echo $BASE_URL;?>/img/cropped-favicon_default-65x65.png" sizes="32x32" />
         <link rel="icon" href="<?php echo $BASE_URL;?>/img/cropped-favicon_default-300x300.png" sizes="192x192" />
         <link rel="apple-touch-icon-precomposed" href="<?php echo $BASE_URL;?>/img/cropped-favicon_default-180x180.png" />
-        
-        <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
         <link rel='stylesheet'  href='<?php echo $BASE_URL; ?>/css/style.css?<?php echo FILE_VERSION; ?>' type='text/css' media='all' />
-        <link rel='stylesheet'  href='<?php echo $BASE_URL; ?>/css/custom.css?<?php echo FILE_VERSION; ?>' type='text/css' media='all' />
         <script type='text/javascript'>
             /* <![CDATA[ */
             var herald_js_settings = {"rtl_mode":"false", "header_sticky":"1", "header_sticky_offset":"600", "smooth_scroll":"1", "trending_columns":"6", "header_responsive_breakpoint":"1249"};

@@ -228,8 +228,6 @@ if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
 
-define('FILE_VERSION', time());
-
 /*
  * Custom
  */
@@ -237,9 +235,11 @@ include_once ('apiurl.php');
 
 if ($env == 'production') {
     define('VERSION_DATE', date('Ymd'));
+    define('FILE_VERSION', date('Ymd'));
     include_once ('production/bootstrap.php');
 } else {
     define('VERSION_DATE', date('YmdHis'));
+    define('FILE_VERSION', date('YmdHis'));
     include_once ('development/bootstrap.php');
 }
 

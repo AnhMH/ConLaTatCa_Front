@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 .mks-ep-modal{
     z-index: -1;
     position: absolute;
@@ -1689,30 +1690,6 @@ form.wp-review-comment-form > div, #commentform.wp-review-comment-form > div {
         left: auto;
         float: right;
     }
-}
- @font-face {
-    font-family: 'Lato1';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjxAwWw.ttf) format('truetype');
-}
-@font-face {
-    font-family: 'Comfortaa';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwaPHA.ttf) format('truetype');
-}
-@font-face {
-    font-family: 'Comfortaa';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFW50e.ttf) format('truetype');
-}
-@font-face {
-    font-family: 'Comfortaa';
-    font-style: normal;
-    font-weight: 600;
-    src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOXOhs.ttf) format('truetype');
 }
  body,figure{
     margin:0
@@ -12764,7 +12741,7 @@ body{
 body {
     background-color:#eeeeee;
     color: #444444;
-    font-family: 'Comfortaa';
+    font-family: Arial,Helvetica,sans-serif;
     font-weight: 400;
 }
 .herald-site-content{
@@ -12772,15 +12749,15 @@ body {
      box-shadow: 0 0 0 1px rgba(68,68,68,0.1);
 }
 h1, h2, h3, h4, h5, h6,.h1, .h2, .h3, .h4, .h5, .h6, .h7{
-    font-family: 'Comfortaa';
+    font-family: Arial,Helvetica,sans-serif;
     font-weight: 700;
 }
 .header-middle .herald-menu,.header-bottom .herald-menu,.herald-header-sticky .herald-menu,.herald-mobile-nav{
-    font-family: 'Comfortaa';
+    font-family: Arial,Helvetica,sans-serif;
     font-weight: 600;
 }
 .herald-menu li.herald-mega-menu .herald-ovrld .meta-category a{
-    font-family: 'Comfortaa';
+    font-family: Arial,Helvetica,sans-serif;
     font-weight: 400;
 }
 .herald-entry-content blockquote p{
