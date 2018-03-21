@@ -3,7 +3,7 @@
         <div class="col-lg-3 col-md-3 col-sm-3">
             <div id="text-3" class="widget widget_text">			
                 <div class="textwidget">
-                    <p><img src="<?php echo $BASE_URL;?>/img/conlatatca_logo.png" alt="<?php echo $settings['web_title'];?>"></p>
+                    <p><img src="<?php echo $BASE_URL;?>/img/logotest.png" alt="<?php echo $settings['web_title'];?>"></p>
                     <p><?php echo $settings['web_description'];?></p>
                     <p style="margin-top:25px">
                         <a class="mks_button mks_button_small squared" href="<?php echo $settings['facebook'];?>" target="_blank" style="color: #FFFFFF; background-color: #0288D1" >Find out more</a>
