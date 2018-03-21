@@ -20,7 +20,7 @@
                         <div class="row">
                             <div class="col-lg-4 col-xs-3">
                                 <div class="herald-post-thumbnail">
-                                    <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['url'];?>" title="<?php echo $p['name'];?>">
+                                    <a href="<?php echo $BASE_URL;?>/tin-tuc/<?php echo $p['url'];?>" title="<?php echo $p['name'];?>">
                                         <img width="74" height="55" src="<?php echo $p['image'];?>" class="attachment-herald-lay-g1 size-herald-lay-g1 wp-post-image" alt="" sizes="(max-width: 74px) 100vw, 74px" />			
                                     </a>
                                 </div>
@@ -28,7 +28,7 @@
                             <div class="col-lg-8 col-xs-9 herald-no-pad">
                                 <div class="entry-header">
                                     <h2 class="entry-title h7">
-                                        <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['url'];?>">
+                                        <a href="<?php echo $BASE_URL;?>/tin-tuc/<?php echo $p['url'];?>">
                                             <?php echo $p['name'];?>
                                         </a>
                                     </h2>

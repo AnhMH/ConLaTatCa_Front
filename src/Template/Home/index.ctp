@@ -64,7 +64,7 @@
                                     <div class="herald-mod-subnav-mobile">
                                         <?php if (!empty($topCate['sub_cates'])): ?>
                                         <?php foreach ($topCate['sub_cates'] as $tsc): ?>
-                                        <a href="<?php echo $BASE_URL;?>/cates/<?php echo $tsc['url'];?>"><?php echo $tsc['name'];?></a>
+                                        <a href="<?php echo $BASE_URL;?>/danh-muc/<?php echo $tsc['url'];?>"><?php echo $tsc['name'];?></a>
                                         <?php endforeach; ?>
                                         <?php endif; ?>
                                     </div>
@@ -74,12 +74,12 @@
                                 <?php if (!empty($topCate['sub_cates'])): ?>
                                 <?php foreach ($topCate['sub_cates'] as $tsc): ?>
                                 <?php $topCateIds[] = $tsc['id']; ?>
-                                <a href="<?php echo $BASE_URL;?>/cates/<?php echo $tsc['url'];?>"><?php echo $tsc['name'];?></a>
+                                <a href="<?php echo $BASE_URL;?>/danh-muc/<?php echo $tsc['url'];?>"><?php echo $tsc['name'];?></a>
                                 <?php endforeach; ?>
                                 <?php endif; ?>
                             </div>
                             <div class="herald-mod-actions">
-                                <a class="herald-all-link" href="<?php echo $BASE_URL;?>/cates/<?php echo $topCate['url'];?>">View All</a>
+                                <a class="herald-all-link" href="<?php echo $BASE_URL;?>/danh-muc/<?php echo $topCate['url'];?>">View All</a>
                                 <div class="herald-slider-controls" data-col="4" data-autoplay="0"></div>
                             </div>
                         </div>
@@ -89,16 +89,16 @@
                         <?php if (in_array($p['cate_id'], $topCateIds)): ?>
                             <article class="herald-lay-f post type-post status-publish format-standard has-post-thumbnail hentry">
                                 <div class="herald-post-thumbnail herald-format-icon-middle">
-                                    <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['url'];?>" title="<?php echo $p['name'];?>">
+                                    <a href="<?php echo $BASE_URL;?>/tin-tuc/<?php echo $p['url'];?>" title="<?php echo $p['name'];?>">
                                         <img width="300" height="168" src="<?php echo $p['image'];?>" class="attachment-herald-lay-f size-herald-lay-f wp-post-image" alt="" sizes="(max-width: 300px) 100vw, 300px" />							
                                     </a>
                                 </div>
                                 <div class="entry-header">
                                     <span class="meta-category meta-small">
-                                        <a href="<?php echo $BASE_URL;?>/cates/<?php echo $p['cate_url'];?>" class="herald-cat-<?php echo $p['cate_id'];?>"><?php echo $p['cate_name'];?></a>
+                                        <a href="<?php echo $BASE_URL;?>/danh-muc/<?php echo $p['cate_url'];?>" class="herald-cat-<?php echo $p['cate_id'];?>"><?php echo $p['cate_name'];?></a>
                                     </span>
                                     <h2 class="entry-title h5">
-                                        <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['url'];?>"><?php echo $p['name'];?></a>
+                                        <a href="<?php echo $BASE_URL;?>/tin-tuc/<?php echo $p['url'];?>"><?php echo $p['name'];?></a>
                                     </h2>
                                     <div class="entry-meta meta-small">
                                         <div class="meta-item herald-views">4,613 Views</div>
@@ -138,16 +138,16 @@
                         <article class="herald-lay-f herald-lay-f1 type-post status-publish format-standard has-post-thumbnail hentry">
                             <div class="herald-ovrld">		
                                 <div class="herald-post-thumbnail">
-                                    <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['url']; ?>" title="<?php echo $p['name']; ?>">
+                                    <a href="<?php echo $BASE_URL;?>/tin-tuc/<?php echo $p['url']; ?>" title="<?php echo $p['name']; ?>">
                                         <img width="300" height="200" src="<?php echo $p['image']; ?>" class="attachment-herald-lay-b1 size-herald-lay-b1 wp-post-image" alt="<?php echo $p['name']; ?>" sizes="(max-width: 300px) 100vw, 300px" />
                                     </a>
                                 </div>
                                 <div class="entry-header herald-clear-blur">
                                     <span class="meta-category">
-                                        <a href="<?php echo $BASE_URL;?>/cates/<?php echo $p['cate_url']; ?>" class="herald-cat-<?php echo $p['cate_id']; ?>"><?php echo $p['cate_name']; ?></a>
+                                        <a href="<?php echo $BASE_URL;?>/danh-muc/<?php echo $p['cate_url']; ?>" class="herald-cat-<?php echo $p['cate_id']; ?>"><?php echo $p['cate_name']; ?></a>
                                     </span>
                                     <h2 class="entry-title h6">
-                                        <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['url']; ?>"><?php echo $p['name']; ?></a>
+                                        <a href="<?php echo $BASE_URL;?>/tin-tuc/<?php echo $p['url']; ?>"><?php echo $p['name']; ?></a>
                                     </h2>
                                     <div class="entry-meta">
                                         <div class="meta-item herald-date">
@@ -162,7 +162,7 @@
                             <div class="row">
                                 <div class="col-lg-4 col-xs-3 col-sm-4">
                                     <div class="herald-post-thumbnail">
-                                        <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['url']; ?>" title="<?php echo $p['name']; ?>">
+                                        <a href="<?php echo $BASE_URL;?>/tin-tuc/<?php echo $p['url']; ?>" title="<?php echo $p['name']; ?>">
                                             <img width="74" height="55" src="<?php echo $p['image']; ?>" class="attachment-herald-lay-g1 size-herald-lay-g1 wp-post-image" alt="" sizes="(max-width: 74px) 100vw, 74px" />			
                                         </a>
                                     </div>
@@ -170,10 +170,10 @@
                                 <div class="col-lg-8 col-xs-9 col-sm-8 herald-no-pad">
                                     <div class="entry-header">
                                         <span class="meta-category meta-small">
-                                            <a href="<?php echo $BASE_URL;?>/cates/<?php echo $p['cate_url']; ?>" class="herald-cat-<?php echo $p['cate_id']; ?>"><?php echo $p['cate_name']; ?></a>
+                                            <a href="<?php echo $BASE_URL;?>/danh-muc/<?php echo $p['cate_url']; ?>" class="herald-cat-<?php echo $p['cate_id']; ?>"><?php echo $p['cate_name']; ?></a>
                                         </span>
                                         <h2 class="entry-title h7">
-                                            <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['url']; ?>"><?php echo $p['name']; ?></a>
+                                            <a href="<?php echo $BASE_URL;?>/tin-tuc/<?php echo $p['url']; ?>"><?php echo $p['name']; ?></a>
                                         </h2>
                                     </div>
                                 </div>
@@ -194,14 +194,14 @@
                     <?php foreach ($data['medias'] as $p): ?>
                     <article class="herald-lay-f post type-post status-publish format-video has-post-thumbnail hentry post_format-post-format-video">
                         <div class="herald-post-thumbnail herald-format-icon-middle">
-                            <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['url'];?>" title="<?php echo $p['name'];?>">
+                            <a href="<?php echo $BASE_URL;?>/tin-tuc/<?php echo $p['url'];?>" title="<?php echo $p['name'];?>">
                                 <img width="300" height="168" src="<?php echo $p['image'];?>" class="attachment-herald-lay-f size-herald-lay-f wp-post-image" alt="<?php echo $p['name'];?>" sizes="(max-width: 300px) 100vw, 300px" />				
                                 <span class="herald-format-icon"><i class="fa fa-play"></i></span>			
                             </a>
                         </div>
                         <div class="entry-header">
                             <h2 class="entry-title h5">
-                                <a href="<?php echo $BASE_URL;?>/articles/<?php echo $p['url'];?>"><?php echo $p['name'];?></a>
+                                <a href="<?php echo $BASE_URL;?>/tin-tuc/<?php echo $p['url'];?>"><?php echo $p['name'];?></a>
                             </h2>
                         </div>
                     </article>

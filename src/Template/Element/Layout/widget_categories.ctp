@@ -4,7 +4,7 @@
         <?php if (!empty($cates)): ?>
         <?php foreach ($cates as $c): ?>
         <li class="cat-item cat-item-<?php echo $c['id'];?>">
-            <a href="<?php echo $BASE_URL;?>/cates/<?php echo $c['url']; ?>" >
+            <a href="<?php echo $BASE_URL;?>/danh-muc/<?php echo $c['url']; ?>" >
                 <span class="category-text"><?php echo $c['name'];?></span>
                 <span class="count"><?php echo $c['id'];?></span>
             </a>
