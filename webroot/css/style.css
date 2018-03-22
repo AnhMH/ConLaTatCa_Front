@@ -3228,9 +3228,6 @@ body .mejs-controls .mejs-button button:before,html{
 .fa-retweet:before{
     content:"\f079"
 }
-.fa-shopping-cart:before{
-    content:"\f07a"
-}
 .fa-folder:before{
     content:"\f07b"
 }
@@ -4679,12 +4676,6 @@ body .mejs-controls .mejs-button button:before,html{
 }
 .fa-stop-circle-o:before{
     content:"\f28e"
-}
-.fa-shopping-bag:before{
-    content:"\f290"
-}
-.fa-shopping-basket:before{
-    content:"\f291"
 }
 .fa-hashtag:before{
     content:"\f292"
@@ -13334,51 +13325,6 @@ li.herald-mega-menu .sub-menu a.herald-cat-42 {
  .herald-woo-mod-right{
     float: right;
 }
-.quantity.buttons_added input {
-     -webkit-appearance: none !important 
-}
-.quantity.buttons_added {
-     position: relative;
-     overflow: hidden;
-     zoom: 1;
-     border: 1px solid #e4e4e4;
-     float: left;
-}
-.quantity.buttons_added input[type=number] {
-     float: left;
-     height: 24px;
-     line-height: 24px;
-     -moz-appearance: textfield;
-}
-.quantity.buttons_added .minus,.quantity.buttons_added .plus,.quantity.buttons_added .qty {
-     display: block;
-     float: left;
-     height: 24px;
-     width: 24px;
-     line-height: 24px;
-     border: 0;
-     margin: 0;
-     padding: 0;
-     text-align: center;
-     vertical-align: middle;
-     font-size: 0.923em;
-     color: #777;
-     cursor: pointer;
-     outline: none;
-}
-.quantity.buttons_added .minus,.quantity.buttons_added .qty {
-     border-right: 1px solid #e4e4e4 
-}
-.quantity.buttons_added .plus,.quantity.buttons_added .minus {
-     background: #f7f7f7 
-}
-.quantity.buttons_added .minus:hover,.quantity.buttons_added .plus:hover {
-     background: #f5f5f5;
-     color: #000;
-}
-.quantity.buttons_added input::-webkit-outer-spin-button,.quantity.buttons_added input::-webkit-inner-spin-button {
-     display: none 
-}
 .col2-set:after {
      content: "";
      display: block;
@@ -13386,86 +13332,6 @@ li.herald-mega-menu .sub-menu a.herald-cat-42 {
      clear: both;
      visibility: hidden;
      zoom: 1;
-}
-.single_variation {
-     display: block;
-     float: left;
-     margin-bottom: 10px;
-}
-.variations_button {
-     clear: both;
-}
-.sku_wrapper {
-     font-weight: bold;
-     font-weight: 600;
-}
-.sku_wrapper span {
-     display: inline;
-     font-weight: 400;
-}
-.my_account_orders .button.view {
-     padding: 0.5em 0.95em;
-}
-#current-shop-items-dropdown {
-     position: absolute;
-     top: 100%;
-     right: 0;
-     background: #fff;
-     z-index: 10000;
-     padding: 10px 20px 20px;
-     border-top: 3px solid #3b86b0;
-     box-shadow: 0 2px 7px rgba(0,0,0,0.1);
-     -moz-box-shadow: 0 2px 7px rgba(0,0,0,0.1);
-     -webkit-box-shadow: 0 2px 7px rgba(0,0,0,0.1);
-     max-height: 350px;
-     width: 260px;
-     overflow-y: auto;
-     visibility: hidden;
-     opacity: 0;
-     -moz-opacity: 0;
-     -webkit-opacity: 0;
-     transition: all 0.25s ease-in-out;
-     -moz-transition: all 0.25s ease-in-out;
-     -webkit-transition: all 0.25s ease-in-out;
-}
-#current-shop-items-dropdown.show {
-     visibility: visible;
-     opacity: 1;
-     -moz-opacity: 1;
-     -webkit-opacity: 1;
-}
-.boxed-main-layout #current-shop-items-dropdown {
-     right: 30px 
-}
-#current-shop-items-dropdown .widgettitle {
-     display: none !important 
-}
-#current-shop-items-dropdown li:first-child {
-     border-top: none;
-}
-#current-shop-items-overlay {
-     display: none;
-     top: 120px;
-     background: #fff;
-     margin: 0;
-     padding: 25px;
-     overflow: hidden;
-     border-radius: 4px;
-     width: 400px;
-     box-shadow: 0 0 4px rgba(0,0,0,0.7);
-     -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7);
-     -moz-box-shadow: 0 0 4px rgba(0,0,0,0.7);
-     z-index: 99999;
-}
-#current-shop-items-overlay .widgettitle {
-     display: none !important;
-}
-#current-shop-items-overlay li.empty {
-     padding: 0;
-     color: #000;
-     font-weight: bold;
-     font-weight: 600;
-     border: none;
 }
 .navbar-style-two .dropdown-menu {
      width: 100% 
@@ -13541,31 +13407,6 @@ li.herald-mega-menu .sub-menu a.herald-cat-42 {
     -webkit-transition: all .2s ease;
     transition: all .2s ease;
 }
-#sidebar .bbp-login-form label{
-    width: auto;
-}
-.bbp-logged-in h4{
-    display: inline-block;
-}
-.sidebar .bbp_widget_login .button{
-    float: right;
-     margin: 5px 0 0 0;
-}
-.bbp-login-form .bbp-submit-wrapper {
-    text-align: right;
-    float: right;
-    margin-top: -30px;
-}
-.bbp-login-form .bbp-remember-me {
-    float: left;
-}
-.bbp-login-form .bbp-username, .bbp-login-form .bbp-email, .bbp-login-form .bbp-password{
-    margin-bottom: 10px;
-    margin-top: 0;
-}
-.bbp-login-form .bbp-login-links a{
-    font-size: 12px;
-}
 .widget_display_stats .block-title {
      margin-bottom: 0 
 }
@@ -13595,9 +13436,6 @@ li.herald-mega-menu .sub-menu a.herald-cat-42 {
 }
 .widget_display_topics .bbp-author-avatar{
     margin: 5px 5px 0;
-}
-.bbp-login-form .bbp-username input, .bbp-login-form .bbp-email input, .bbp-login-form .bbp-password input{
-    height: 36px;
 }
 .widget_display_replies div,.widget_display_topics div{
     font-size: 1.4rem;
