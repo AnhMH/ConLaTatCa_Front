@@ -1,10 +1,14 @@
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item current_page_item current-menu-ancestor current_page_ancestor">
+<?php 
+$_url = !empty($_url) ? $_url : '';
+$_urlActive = 'current-menu-item current_page_item current-menu-ancestor current_page_ancestor';
+?>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home page_item <?php echo ($controller == 'home' || empty($_url)) ? $_urlActive : '';?>">
     <a href="<?php echo $BASE_URL;?>">Trang chủ</a>
 </li>
 <?php if (!empty($cates)): ?>
 <?php foreach ($cates as $cate): ?>
 <?php if (empty($cate['root_id'])): ?>
-<li class="menu-item <?php echo !empty($cate['sub_cates']) ? 'herald-mega-menu' : '';?>">
+<li class="menu-item <?php echo !empty($cate['sub_cates']) ? 'herald-mega-menu' : '';?> <?php echo $_url == $cate['url'] ? $_urlActive : ''; ?>">
     <a href="<?php echo $BASE_URL;?>/danh-muc/<?php echo $cate['url'];?>"><?php echo $cate['name'];?></a>
     <?php if (!empty($cate['sub_cates'])): ?>
     <ul class="sub-menu">

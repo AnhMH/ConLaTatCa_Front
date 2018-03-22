@@ -34,6 +34,7 @@ class CatesController extends AppController {
         );
         $data = Api::call(Configure::read('API.url_posts_all'), $param);
         $param['cate_name'] = $cateName;
+        $this->set('_url', $url);
         $this->set('data', $data);
         $this->set('param', $param);
     }

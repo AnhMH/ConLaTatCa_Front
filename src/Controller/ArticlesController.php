@@ -33,5 +33,8 @@ class ArticlesController extends AppController {
         if (!empty($data['image'])) {
             $this->set('pageImage', $data['image']);
         }
+        if (!empty($data['cate_url'])) {
+            $this->set('_url', $data['cate_url']);
+        }
     }
 }
