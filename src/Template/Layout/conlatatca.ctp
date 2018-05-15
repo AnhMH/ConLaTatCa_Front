@@ -65,5 +65,6 @@ $_image = !empty($pageImage) ? $pageImage : $settings['web_image'];
 
         <a href="javascript:void(0)" id="back-top" class="herald-goto-top"><i class="fa fa-angle-up"></i></a>
         <script type='text/javascript' src='<?php echo $BASE_URL; ?>/js/common.js?<?php echo FILE_VERSION; ?>'></script>
+        <script type='text/javascript' src='<?php echo $BASE_URL; ?>/js/jquery.lazyloadxt.js?<?php echo FILE_VERSION; ?>'></script>
     </body>
 </html>
